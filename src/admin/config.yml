@@ -1,0 +1,199 @@
+backend:
+    name: git-gateway
+    branch: main
+
+local_backend: true
+
+# Change url to a link to the image you want to use, no file paths, must be a URL
+logo_url: "https://codestitch.app/frontend/images/logo.png"
+
+# Where should uploaded files be saved
+media_folder: src/assets/images/cms
+
+# Where should media be served, relative to the base of the built site
+public_folder: /assets/images/cms
+
+collections:
+    # SETTINGS CONFIG
+    - label: Settings
+      name: settings
+      delete: false
+      editor:
+          preview: false
+      files:
+          - label: Website Settings
+            name: website_settings
+            file: src/_data/client.json
+            description: Allows a client to update their own contact information, through the default client.json file
+            fields:
+                - label: Business Name
+                  name: name
+                  widget: string
+                  summary: Used in browser tab and sharing links
+
+                - label: Email
+                  name: email
+                  widget: string
+                  summary: Main email for customers to contact you
+
+                - label: Unformatted Telephone
+                  name: phoneForTel
+                  widget: string
+                  summary: Used for clickable links to phone. Enter in format xxx-xxx-xxxx
+
+                - label: Formatted Telephone
+                  name: phoneFormatted
+                  widget: string
+                  summary: Used for display on website. Enter in your preferred format
+
+                - label: Address
+                  name: address
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: Address Line One
+                        name: lineOne
+                        widget: string
+
+                      - label: Address Line Two
+                        name: lineTwo
+                        widget: string
+
+                      - label: City
+                        name: city
+                        widget: string
+
+                      - label: State
+                        name: state
+                        widget: string
+
+                      - label: Zip Code
+                        name: zip
+                        widget: string
+
+                      - label: Google Maps Link
+                        name: mapLink
+                        widget: string
+                        summary: Provide a Google Maps share link to guide visitors to your physical locations
+
+                - label: Social Media
+                  name: social
+                  widget: object
+                  collapsed: true
+                  fields:
+                      - label: Facebook
+                        name: facebook
+                        widget: string
+
+                      - label: Twitter
+                        name: twitter
+                        widget: string
+
+                      - label: Instagram
+                        name: instagram
+                        widget: string
+
+                      - label: Youtube
+                        name: youtube
+                        widget: string
+
+    # BLOG CONFIG
+    - label: Blog
+      name: blog
+      folder: src/content/blog
+      create: true
+      slug: "{{slug}}"
+      fields:
+          - label: Title
+            name: title
+            widget: string
+
+          - label: Description
+            name: description
+            widget: string
+
+          - label: Author
+            name: author
+            widget: string
+
+          - label: Date
+            name: date
+            widget: datetime
+
+          - label: Tags
+            name: tags
+            widget: list
+            default:
+                - post
+
+          - label: Featured Image
+            name: image
+            widget: image
+
+          - label: Image Caption
+            name: imageAlt
+            widget: string
+
+          - label: Body
+            name: body
+            widget: markdown
+
+    # MENU CONFIG
+    - label: Menu
+      name: menu
+      delete: false
+      editor:
+          preview: false
+      files:
+          - label: Menu Items
+            name: menu
+            file: src/_data/menu.json
+            description: The menu that exists on the /menu page
+            fields:
+                - label: Courses
+                  name: courses
+                  label_singular: Course
+                  widget: list
+                  fields:
+                      - label: Course Name
+                        name: course_name
+                        widget: string
+                        hint: '"Breakfast" or "Lunch"'
+
+                      - label: Course Description
+                        name: course_description
+                        widget: markdown
+
+                      - label: Sections
+                        name: sections
+                        label_singular: Section
+                        widget: list
+                        fields:
+                            - label: Section Name
+                              name: section_name
+                              widget: string
+                              hint: '"Farm Fresh Eggs" or "French Toast"'
+
+                            - label: Section Description
+                              name: section_description
+                              widget: markdown
+
+                            - label: Items
+                              name: items
+                              label_singular: Item
+                              widget: list
+                              summary: "{{fields.item_name}}"
+                              fields:
+                                  - label: Item Name
+                                    name: item_name
+                                    widget: string
+
+                                  - label: Item Description
+                                    name: item_description
+                                    widget: markdown
+                                    required: false
+
+                                  - label: Item Price
+                                    name: item_price
+                                    widget: number
+                                    required: false

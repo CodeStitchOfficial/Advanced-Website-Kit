@@ -1,0 +1,169 @@
+---
+title: "Menu"
+description: "A menu controllable by the content management system. Scales based on what sections and menu items you provide"
+permalink: 'menu/'
+eleventyNavigation:
+    key: 'Menu' 
+    order: '200'
+    parent: 'CMS'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/cms-menu.css">
+{% endblock %}
+
+{% block body %}
+
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-1018">
+        <div class="cs-container">
+            <picture class="cs-picture">
+                <img class="cs-icon" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffancy-divider.svg" alt="divider" width="181" height="36" aria-hidden="true">
+            </picture>
+            <span class="cs-int-title">Menu</span>
+            <p class="cs-text">
+                A fully editable menu with items grouped by breakfast, lunch or dinner. Scales with the addition of more items or sections.
+        </p>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Ftable.jpg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Ftable.jpg">
+            <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Ftable.jpg" alt="logo" width="1920" height="1000">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                  Menu Group                  -->
+    <!-- ============================================ -->
+
+    <!--
+    
+        Menu Rules
+
+
+        1) The menu items are broken up in to rows (cs-menu-row) so we can have an easier time arranging the menu items for more flexibility.
+
+        2) There are 2 menu items by default in the cs-menu-row, if you need a third menu item, add a class .cs-3 to the .cs-menu-row. This will change the styles to account for a third option and look much better.
+
+        3) Inside the cs-menu-group each menu section in wrapped in a .cs-menu class. We have two types of menu styles.  There's the default and cs-menu-style2. cs-menu-style2 makes the dark wood background section style you see.  When you need to make extra .cs-menu groups for your menu group, you just copy and paste the .cs-menu under the last one.  And if you want that menu to have the wood background for variety, just add the .cs-menu-style2 class after the cs-menu class and it will automatically add the new style.  
+
+        We recommend not having two cs-menu-style2 groups one after the other. It works best when it alternates, like in the default menu we provided. You don't have to use it at all if you don't want it.  Remove that class and your menu will be uniform.
+
+        4) For easier code management, collapse all "#cs-menu .cs-menu" section tags.  So #cs-menu1, #cs-menu2, #cs-menu3, etc will have their .cs-menu section tags collapsed. Makes it easier to go up and down the document.  You can also add your own menu styles or edit the ones we have for you to be more suited for your design.
+
+        5) ADD NEW MENUS - When you need to add more menus, copy and paste the .cs-button in .cs-button-group and change the data-filter to the next number ("six" if you still have the default 5 items). Then make sure you change its ID to the next menu number (#cs-menu6 if you added a 6th one, #cs-menu 7 and so on) and change the onclick location to the same ID number.
+
+        For quick reference:
+
+        .cs-menu-style2 = dark wood background
+        .cs-menu-style3 = white background with opacity
+
+        .cs-3 = when placed on .cs-menu-row it turns the row into a 3 item flexbox
+
+    -->
+
+    <div id="cs-menu-group">
+        {# Rendering the buttons #}
+        <div class="cs-wrapper">
+            {% for course in menu.courses %}
+                <div class="cs-button-group">
+                    <button class="cs-button {% if loop.index == 1 %}cs-active{% endif %}" data-filter="{{ loop.index }}"
+                onclick="window.location.href='#cs-menu-group';">
+                        {{ course.course_name}}
+                    </button>
+                </div>
+            {% endfor %}
+        </div>
+
+        {# Rendering the courses #}
+        {% for course in menu.courses %}
+            <div id="cs-menu{{ loop.index }}" class="cs-menu-group" data-category="{{ loop.index }}">
+                {% for section in course.sections %}
+                    <section class="cs-menu {% if loop.index % 2 == 0 %}cs-menu-style2{% endif %}">
+                        <div class="cs-container">
+                            <div class="cs-content">
+                                <h2 class="cs-title">{{ section.section_name }}</h2>
+                                <p class="cs-text">{{ section.section_description }}</p>
+                            </div>
+                            <ul class="cs-menu-list">
+
+                                {# Rendering the buttons #}
+                                {% for row in section.items | batch(3) %}
+                                    <div class="cs-menu-row cs-3">
+                                        {% for item in row %}
+                                            <li class="cs-menu-item">
+                                                <h3 class="cs-h3">
+                                                    {% if item.item_name %}
+                                                        <span class="cs-name">{{ item.item_name }}</span>
+                                                    {% endif %}
+
+                                                    {% if item.item_price %}
+                                                        <span class="cs-price">{{ item.item_price }}</span>
+                                                    {% endif %}
+                                                </h3>
+
+                                                {% if item.item_description %}
+                                                    <p class="cs-menu-p">{{ item.item_description }}</p>
+                                                {% endif %}
+                                            </li>
+                                        {% endfor %}
+                                    </div>
+                                {% endfor %}
+                            </ul>
+                        </div>
+                    </section>
+
+                {% endfor %}
+            </div>
+        {% endfor %}
+    </div>
+
+    <script>
+        class CS_MenuFilter {
+            filtersSelector = '.cs-button';
+            menuSelector = '.cs-menu-group';
+            activeClass = 'cs-active';
+            hiddenClass = 'cs-hidden';
+
+            constructor() {
+                this.$menus = document.querySelectorAll(this.menuSelector);
+                const $filters = document.querySelectorAll(this.filtersSelector);
+
+                this.onClick($filters[0]);
+
+                for (const $filter of $filters) {
+                    $filter.addEventListener('click', () => this.onClick($filter));
+                }
+            }
+
+            onClick($filter) {
+                this.filter($filter.dataset.filter);
+
+                const {activeClass} = this;
+
+                this.$activeFilter?.classList.remove(activeClass);
+                $filter.classList.add(activeClass);
+
+                this.$activeFilter = $filter;
+            }
+
+            filter(filter) {
+                const showAll = filter == 'all';
+                const {hiddenClass} = this;
+
+                for (const $menu of this.$menus) {
+                    const show = showAll || $menu.dataset.category == filter;
+                    $menu.classList.toggle(hiddenClass, !show);
+                }
+            }
+        }
+
+        new CS_MenuFilter();
+    </script>
+{% endblock %}
