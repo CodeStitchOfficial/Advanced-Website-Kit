@@ -2,6 +2,9 @@
 const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output");
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
 
+// Filter Imports
+const filterFormatDate = require("./src/config/filters/formatDate");
+
 module.exports = function (eleventyConfig) {
     /**
      *  PLUGINS
@@ -28,6 +31,16 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets/images");
     eleventyConfig.addPassthroughCopy("./src/assets/js");
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
+    eleventyConfig.addPassthroughCopy("./src/admin");
+
+    /**
+     *  FILTERS
+     *      Allows modification of data before it is outputted, denoted by {{ contentToPrint | filterName }}
+     *          https://www.11ty.dev/docs/filters/
+     */
+
+    // Turns a date from ISO format to a more human-readable one
+    eleventyConfig.addFilter("formatDate", filterFormatDate);
 
     return {
         dir: {

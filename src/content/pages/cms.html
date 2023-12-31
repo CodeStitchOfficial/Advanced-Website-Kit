@@ -1,0 +1,95 @@
+---
+title: "The CMS Branch"
+description: "The CMS branch of the advanced starter kit. Demonstrates the full capabilities of Decap CMS by supplying some common small-business use cases."
+permalink: 'cms/'
+eleventyNavigation:
+    key: 'CMS'
+    order: '400'
+---
+
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/cms.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-1400">
+        <div class="cs-container">
+            <span class="cs-int-title">CMS Branch</span>
+            <div class="cs-breadcrumbs">
+                <a href="" class="cs-link">Home</a>
+                <a href="" class="cs-link cs-active">CMS</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg">
+            <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg" alt="people laughing" width="1280" height="568" aria-hidden="true">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                 Content Page                 -->
+    <!-- ============================================ -->
+
+    <section id="content-page-847">
+        <div class="cs-container">
+            <div class="cs-content">
+                <h1 class="cs-title">Giving Clients Freedom to Make Changes and Manage Content</h1>
+                <p>The CMS Branch sets up Decap CMS to be used within the project. This has been chosen for it's ease of installation, minimal backend requirement, and only requiring one config.yaml file to set up. While we have provided a couple of configurations for you, we highly advise reviewing the
+                    <a href="https://decapcms.org/docs/intro/">Decap CMS documentation</a>
+                    on how to extend the CMS beyond what we've done for you.
+                </p>
+                <p>Content can take the form of a folder of .md files, or a single configuration file. This is then manageable via the /admin path of the website, which can be authenticated via Netlify. Please see the README for this branch for instructions when it comes to deployment.</p>
+                <p>We have provided a number of collections, as listed below. Each section has it's own page, file/folder (as defined in the config.yaml), and set of styles. This means you can pick-and-choose what kind of content needs to be managed, adjust accordingly and deploy.</p>
+                <h2>Website Settings</h2>
+                <p>We've hooked up the _data/client.json file to the kit, allowing clients to change their business information. This allows a client to change their contact information and social media links of their own accord. The client domain has been left out, as this is used in some critical parts of the project that could negatively affect SEO if not correct.</p>
+                <h2>Blog</h2>
+                <p>The same as the Intermediate Kit, and an example of how folder collections work. Clients can create new posts, modify existing posts, and have them converted to .md files behind the scenes. The data is then saved in content/blog.</p>
+                <p>The
+                    <a href="https://www.11ty.dev/docs/data-cascade/">Eleventy Data Cascade</a>
+                    is then used to pull data from different sources to create the file. In short, data can be defined in different places, with each place taking priority in a different way. In this example, the data cascade works in two steps:
+                </p>
+                <ol>
+                    <li>
+                        The markdown files supply the post-specific data (title, date, post body, etc.). The title and description defined here is pulled up to base.html and is what's used here, instead of the page frontmatter like the files in content/pages. This has the higher priority.
+                    </li>
+                    <li>
+                        The blog.json directory data file tells all the markdown files to use the post layout. This is so the layout isn't exposed in the CMS via the .md files. Additionally, the "post" tag is defined in the blog.json, allowing all blog posts to be collected via "collections.post". This has the lower priority.
+                    </li>
+                </ol>
+                <p>The cascade then has a benefit. By default, all posts a client creates contains the "post" tag, which is exposed in the .md frontmatter. They can optionally add the "featured" tag for the post to show in the sidebar. If the client happens to remove the "post" tag, the post will still be tagged for collection use via the blog.json. Inheritance!</p>
+                <h2>Menu</h2>
+                <p>As another demonstration of file-based collections, we've converted a menu stitch to be used within the CMS. This collection is made of a single file where different menu courses ("sections") can be added, with different meals added within these sections.</p>
+                <p>The menu is then dynamically rendered, by section, with each section containing it's appropriate meals. The data controlled by the client lives in _data/menu.json. This data is iterated over using Nunjucks to be rendered</p>
+            </div>
+            <div class="cs-image-group">
+                <!--Top Picture-->
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax3.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax3.jpg">
+                    <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax3.jpg" alt="person" width="542" height="520" aria-hidden="true">
+                </picture>
+                <!--Top Picture-->
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax4.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax4.jpg">
+                    <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/tax4.jpg" alt="person" width="542" height="520" aria-hidden="true">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

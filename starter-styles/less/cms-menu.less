@@ -1,0 +1,538 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0em) {
+    #banner-1018 {
+        z-index: 1;
+        position: relative;
+        background-color: #000;
+        padding: 0 (16/16rem);
+        /* 160px - 245px */
+        padding-top: (270/16rem);
+        padding-bottom: (120/16rem);
+
+        .cs-container {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            margin: auto;
+            max-width: (1280/16rem);
+            width: 100%;
+            text-align: center;
+        }
+
+        .cs-picture {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 0 (12/16rem);
+            width: 100%;
+            gap: (16/16rem);
+
+            &:before {
+                position: relative;
+                /* left line */
+                content: "";
+                opacity: 1;
+                display: block;
+                background: #b4b2c7;
+                height: 1px;
+                max-width: (150/16rem);
+                width: 50%;
+            }
+
+            &:after {
+                position: relative;
+                /* right line */
+                content: "";
+                opacity: 1;
+                display: block;
+                background: #b4b2c7;
+                height: 1px;
+                max-width: (150/16rem);
+                width: 50%;
+            }
+        }
+
+        .cs-icon {
+            height: auto;
+            /* 100px - 180px */
+            max-width: clamp(6.25rem, 18vw, 11.25rem);
+            width: 40%;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-int-title {
+            position: relative;
+            margin: 0 0 (16/16rem) 0;
+            max-width: (700/16rem);
+            /* 39px - 61px */
+            font-size: clamp(2.4375rem, 6.5vw, 3.8125rem);
+            line-height: 1.2em;
+            font-weight: 900;
+            color: var(--bodyTextColorWhite);
+            text-align: center;
+        }
+
+        .cs-text {
+            margin: 0;
+            max-width: (765/16rem);
+            width: 100%;
+            /* 16px - 20px */
+            font-size: clamp(1rem, 2vw, 1.25rem);
+            line-height: 1.5em;
+            color: var(--bodyTextColorWhite);
+            text-align: inherit;
+        }
+
+        .cs-background {
+            z-index: -1;
+            position: absolute;
+            top: 0;
+            left: 0;
+            opacity: 0.7;
+            display: block;
+            height: 100%;
+            width: 100%;
+
+            &:before {
+                z-index: 1;
+                position: absolute;
+                top: 0;
+                left: 0;
+                /* black overlay box */
+                content: "";
+                opacity: 0.72;
+                display: block;
+                background: #000;
+                height: 100%;
+                width: 100%;
+            }
+
+            img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                height: 100%;
+                width: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+/*-- -------------------------- -->
+<---           Menu             -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    html,
+    body {
+        overflow: initial;
+        /* when you click a menu button and jump to the top of the screen this makes it so it has a smooth transiiton instead of an abrupt movement */
+        scroll-behavior: smooth;
+    }
+
+    #cs-menu-group {
+        height: auto;
+        padding: var(--sectionPadding);
+        padding-right: 0;
+        padding-bottom: 0;
+        padding-left: 0;
+        /* remove the font family so the Stitch inherits the fonts from your global stylesheet */
+
+        text-align: center;
+
+        .cs-container {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            /* changes to 1280px at tablet */
+            max-width: (550/16em);
+            width: 100%;
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            padding: var(--sectionPadding);
+            /* 48px - 64px */
+            padding-top: clamp(3em, 5vw, 4em);
+            /* 48px - 64px */
+            gap: clamp(3rem, 6vw, 4rem);
+        }
+
+        .cs-hidden {
+            display: none;
+        }
+
+        .cs-wrapper {
+            z-index: 10000;
+            position: sticky;
+            /* change based on how tall your navigation is above it.  If your navigation is 90px tall, set it to 100px from the top on mobile, and increase the larger value in the clamp to change the desktop value if you need to as well */
+            top: (208/16rem);
+            display: flex;
+            flex-wrap: wrap;
+            grid-template-columns: repeat(12, 1fr);
+            justify-content: center;
+            border: 1px solid #b4b2c7;
+            border-radius: (70/16em);
+            margin: 0 auto;
+            background-color: #f3f3f3;
+            max-width: (900/16rem);
+            width: 94%;
+            box-sizing: border-box;
+            padding: 0;
+            /* 16px - 28px top & bottom */
+            /* 32px - 48px left & right */
+            padding: clamp(1em, 3vw, 1.75em) clamp(2em, 4vw, 3em);
+            box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+            column-gap: clamp(0.5rem, 2vw, 1.5rem);
+            row-gap: (8/16rem);
+        }
+
+        .cs-button-group {
+            z-index: 1000;
+            margin: 0 (8/16rem) 0 0;
+            width: auto;
+            grid-column: span 6;
+            /* 24px - 36px */
+            column-gap: clamp(1.5rem, 2vw, 2.25rem);
+            row-gap: (12/16rem);
+        }
+
+        .cs-button {
+            position: relative;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            border: none;
+            background-color: transparent;
+            width: 100%;
+            padding: (4/16rem);
+            font-size: clamp(0.875rem, 1.3vw, 1rem);
+            line-height: 1.5;
+            font-weight: 400;
+            color: #878787;
+            transition: color 0.3s, font-weight 0.3s, color 0.3s;
+
+            &:hover {
+                color: var(--primary);
+                cursor: pointer;
+            }
+
+            &:after {
+                position: relative;
+                /* active state icon */
+                content: "";
+                opacity: 0;
+                display: block;
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons%2Ffancy-icon.svg");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                /* 16px - 24px */
+                height: clamp(1em, 3vw, 1.5em);
+                width: 0;
+                transition: width 0.3s, opacity 0.3s, margin-left 0.3s;
+            }
+
+            &.cs-active {
+                font-weight: 700;
+                color: var(--headerColor);
+                &:after {
+                    opacity: 1;
+                    /* 8px - 16px */
+                    margin-left: clamp(0.5em, 0.5vw, 1em);
+                    width: clamp(1.5625em, 3vw, 2.25em);
+                }
+            }
+        }
+
+        .cs-menu {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            /* 32px - 64px */
+            gap: clamp(2rem, 6vw, 4rem);
+
+            &.cs-menu-style2 {
+                position: relative;
+                /* changes to desktop at desktop */
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Fwood2-m.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+                &:before {
+                    z-index: 1;
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    content: "";
+                    opacity: 0.7;
+                    display: block;
+                    background: #000;
+                    height: 100%;
+                    width: 100%;
+                }
+
+                .cs-title,
+                .cs-text {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-name {
+                    color: var(--bodyTextColorWhite);
+                }
+
+                .cs-menu-p {
+                    opacity: 0.8;
+                    color: #fff;
+                }
+            }
+
+            &.cs-menu-style3 {
+                background-color: rgba(255, 255, 255, 0.7);
+            }
+        }
+
+        .cs-content {
+            z-index: 20;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            /* centers content horizontally, set to flex-start to left align */
+            align-items: center;
+            width: 100%;
+            /* set text align to left if content needs to be left aligned */
+            text-align: center;
+        }
+
+        .cs-title {
+            position: relative;
+            margin: 0 0 (16/16rem) 0;
+            max-width: (700/16rem);
+            font-size: clamp(3.9375rem, 7.9vw, 5.4625rem);
+            line-height: 1.2em;
+            color: var(--headerColor);
+            text-align: inherit;
+        }
+
+        .cs-text {
+            margin: 0;
+            max-width: (650/16rem);
+            width: 100%;
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            text-align: inherit;
+        }
+
+        .cs-menu-list {
+            z-index: 20;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            width: 100%;
+            padding: 0;
+            row-gap: (32/16rem);
+        }
+
+        .cs-menu-row {
+            display: flex;
+            flex-direction: column;
+            align-items: stretch;
+            /* 32px - 60px */
+            row-gap: clamp(2rem, 6vw, 3.75rem);
+        }
+
+        .cs-menu-item {
+            display: flex;
+            flex-direction: column;
+            margin: 0;
+            width: 100%;
+            list-style: none;
+            text-align: left;
+            gap: (16/16rem);
+        }
+
+        .cs-h3 {
+            position: relative;
+            display: flex;
+            justify-content: flex-start;
+            align-items: flex-start;
+            margin: 0;
+            width: 100%;
+            /* 20px - 25px */
+            font-size: clamp(1.25rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: 700;
+            gap: (16/16rem);
+
+            &:after {
+                /* forces it into the 2nd position */
+                order: 2;
+                position: relative;
+                /* divider line */
+                content: "";
+                opacity: 1;
+                display: block;
+                margin-top: clamp(1.125rem, 2vw, 1.5rem);
+                background: #b4b2c7;
+                height: 1px;
+                max-width: (200/16rem);
+                min-width: (16/16rem);
+                width: 100%;
+            }
+        }
+
+        .cs-name {
+            display: block;
+            /* 4px - 8px */
+            margin: clamp(0.25rem, 0.8vw, 0.625rem) 0 0 0;
+            margin-right: auto;
+            max-width: 16ch;
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-price {
+            /* forces it into the 3rd position */
+            order: 3;
+            display: block;
+            border: 1px solid #b4b2c7;
+            border-radius: (80/16rem);
+            margin: 0;
+            background-color: #fff;
+            width: auto;
+            /* prevents padding from affecting height and width */
+            box-sizing: border-box;
+            padding: (8/16rem) (12/16rem);
+            /* 20px - 25px */
+            font-size: clamp(1rem, 2vw, 1.5625rem);
+            line-height: 1.2em;
+            font-weight: bold;
+            color: var(--primary);
+            /* prevents flexbox from squishing it */
+            flex: none;
+        }
+
+        .cs-menu-p {
+            margin: 0;
+            width: 100%;
+            font-size: var(--bodyFontSize);
+            line-height: 1.5em;
+            color: var(--bodyTextColor);
+            text-align: inherit;
+        }
+    }
+}
+
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #cs-menu-group {
+        .cs-container {
+            max-width: (1280/16rem);
+        }
+
+        .cs-menu {
+            width: 100%;
+            &.cs-menu-style2 {
+                background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Images%2FMISC%2Fwood.jpg");
+                background-position: center;
+                background-size: cover;
+                background-repeat: no-repeat;
+            }
+        }
+
+        .cs-menu-row {
+            flex-direction: row;
+            justify-content: stretch;
+            width: 100%;
+            /* 32px - 80px */
+            gap: clamp(2em, 4vw, 5rem);
+
+            &.cs-3 {
+                .cs-h3 {
+                    gap: (8/16rem);
+                    &:after {
+                        display: none;
+                    }
+                }
+                .cs-name {
+                    max-width: 20ch;
+                    width: 70%;
+                    font-size: clamp(1rem, 2vw, 1.5625rem);
+                }
+            }
+        }
+
+        .cs-menu-row {
+            display: grid;
+            grid-template-columns: repeat(12, 1fr);
+            width: 100%;
+        }
+
+        .cs-menu-item {
+            margin: 0 auto;
+            max-width: (600/16rem);
+            grid-column: span 4;
+        }
+
+        .cs-name {
+            max-width: 70%;
+            width: fit-content;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #cs-menu-group {
+            background-color: rgba(0, 0, 0, 0.5);
+
+            .cs-wrapper {
+                background-color: var(--medium);
+            }
+
+            .cs-button {
+                color: #fff;
+                &:hover {
+                    color: var(--secondary);
+                }
+            }
+            .cs-topper {
+                color: var(--primaryLight);
+            }
+            .cs-title,
+            .cs-text,
+            .cs-name,
+            .cs-menu-p {
+                color: var(--bodyTextColorWhite);
+            }
+            .cs-text,
+            .cs-menu-p {
+                opacity: 0.8;
+            }
+            .cs-price {
+                background-color: var(--medium);
+                color: var(--secondary);
+            }
+            .cs-menu-style2 .cs-price {
+                background-color: #fff;
+                color: var(--primary);
+            }
+
+            .cs-menu-style3 {
+                background-color: rgba(255, 255, 255, 0.03);
+            }
+        }
+    }
+}
