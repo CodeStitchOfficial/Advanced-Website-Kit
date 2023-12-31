@@ -44,6 +44,17 @@
         <script src="/assets/js/dark.js" defer></script>
         <script src="/assets/js/nav.js" defer></script>
 
+        <!-- Shopify Scripts -->
+        <script>
+            window.shopify = window.shopify || {}
+            window.shopify.auth = {
+                store_url: "{{ shopAuth.store_url }}",
+                access_token: "{{ shopAuth.access_token }}",
+                api_verion: "{{ shopAuth.api_verion }}"
+            }
+        </script>
+        <script src="https://sdks.shopifycdn.com/buy-button/2.4.0/buybutton.js" defer></script>
+        <script src="/assets/js/shopify.js" defer></script>
         <!-- Use a head block in any layout extending from base.html to include page-specific <head> tags. It will be included here -->
         {# CS-TODO: Contrary to the Intermediate Kit, all preloads will need to be done manually from the pages head block. This is so responsive preloads can be achieved when using the optimization branch #}
         {# https://web.dev/articles/preload-responsive-images #}

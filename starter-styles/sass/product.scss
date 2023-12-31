@@ -1,0 +1,367 @@
+/*-- -------------------------- -->
+<---   Interior Page Header     -->
+<--- -------------------------- -*/
+
+/* Mobile */
+@media only screen and (min-width: 0em) {
+    #int-hero {
+        min-height: 30vh;
+        padding-top: 9.375rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+
+        &:before {
+            content: "";
+            width: 100%;
+            height: 100%;
+            background: #000;
+            opacity: 0.7;
+            display: block;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -1;
+        }
+
+        picture {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: -2;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+                position: absolute;
+                top: 0;
+                left: 0;
+            }
+        }
+
+        h1 {
+            font-size: 2.13333333rem;
+            text-align: center;
+            width: 96%;
+            max-width: 31.25rem;
+            margin: 0 auto;
+            margin-top: 4.375rem;
+            margin-bottom: 1.875rem;
+            color: #fff;
+            position: relative;
+        }
+
+        p {
+            text-align: center;
+            width: 96%;
+            max-width: 25rem;
+            margin: auto;
+            margin-bottom: 1.875rem;
+            color: #fff;
+            display: block;
+        }
+    }
+}
+
+/* Tablet */
+@media only screen and (min-width: 48em) {
+    #int-hero {
+        font-size: 100%;
+
+        h1 {
+            font-size: 4rem;
+        }
+    }
+}
+
+/* Small Desktop */
+@media only screen and (min-width: 64em) {
+    #int-hero {
+        font-size: inherit;
+        height: auto;
+        min-height: 18.75rem;
+        padding-top: 11.25rem;
+        background-attachment: fixed;
+        padding-block-end: 6.25rem;
+    }
+}
+
+/*-- -------------------------- -->
+<---          Product           -->
+<--- -------------------------- -*/
+
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #product {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+
+        .cs-container {
+            width: 100%;
+            max-width: 46.875rem;
+            margin: auto;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: clamp(1.75rem, 5vw, 4rem);
+        }
+
+        .cs-large-image {
+            width: 100%;
+            height: clamp(15.5rem, 70vw, 33.3125rem);
+            display: block;
+            img {
+                width: 100%;
+                height: 100%;
+                object-fit: contain;
+                background-color: #f7f7f7;
+                display: block;
+            }
+        }
+
+        .cs-h3 {
+            font-size: var(--headerFontSize);
+            font-weight: 900;
+            line-height: 1.2em;
+            margin: 0 0 0.5rem;
+            color: var(--headerColor);
+        }
+
+        .cs-price {
+            font-size: 1.25rem;
+            font-weight: 700;
+            line-height: 1.2em;
+            color: var(--secondary);
+            display: block;
+        }
+
+        .cs-compare-price {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2em;
+            text-decoration: line-through;
+            color: #767676;
+            display: block;
+        }
+
+        .cs-taxes {
+            font-size: 0.875rem;
+            font-weight: 400;
+            line-height: 1.5em;
+            color: var(--primary);
+            display: block;
+        }
+
+        .cs-info-text {
+            font-size: 1rem;
+            font-weight: 400;
+            line-height: 1.5em;
+            margin: clamp(0.75rem, 2vw, 1rem) 0 0.5rem;
+            color: var(--bodyTextColor);
+        }
+
+        .cs-details {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2em;
+            width: fit-content;
+            margin-bottom: 1.5rem;
+            color: var(--bodyTextColor);
+            border-bottom: 1px solid var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-option {
+            font-size: 1.275rem;
+            font-weight: 700;
+            line-height: 0.875em;
+            margin-bottom: 1.5rem;
+            color: var(--bodyTextColor);
+            display: block;
+        }
+
+        .cs-dropdown {
+            width: 100%;
+            max-width: 15rem;
+            height: 3rem;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+            background: #f7f7f7;
+            border: 1px solid #e8e8e8;
+            border-radius: 6.25rem;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .cs-quantity {
+            width: 100%;
+            width: fit-content;
+            max-width: 15rem;
+            height: 3rem;
+            margin-bottom: 1.5rem;
+            padding: 0 1rem;
+            background: #f7f7f7;
+            border: 1px solid #e8e8e8;
+            border-radius: 6.25rem;
+            outline: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 1rem;
+            cursor: pointer;
+        }
+
+        .cs-select-icon {
+            display: none;
+        }
+
+        .cs-quantity-increment {
+            font-size: 1.5rem;
+            color: #767676;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cs-quantity-decrement {
+            font-size: 1.5rem;
+            color: #767676;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .cs-quantity-input {
+            font-size: 1.25rem;
+            line-height: 1.5em;
+            text-align: center;
+            width: 2rem;
+            background-color: transparent;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .cs-quantity-input[type="number"] {
+            margin: 0;
+            -webkit-appearance: none;
+            -moz-appearance: textfield;
+        }
+
+        .cs-button {
+            font-size: 1rem;
+            font-weight: 700;
+            line-height: 1.2em;
+            padding: 1rem;
+            background: none;
+            border: none;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            flex: 1 0 0;
+        }
+
+        .cs-buy {
+            color: #fff;
+            background-color: var(--primary);
+            cursor: pointer;
+        }
+    }
+
+    .visuallyhidden {
+        white-space: nowrap;
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+    }
+}
+
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #product {
+        .cs-container {
+            max-width: 80rem;
+            flex-direction: row;
+            align-items: start;
+        }
+
+        .cs-large-image {
+            height: 100%;
+            flex: 0 0 33.75rem;
+        }
+
+        .cs-product-info {
+            flex: 1 0 0;
+        }
+    }
+}
+
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode {
+        #product {
+            .cs-h3 {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-info-text {
+                color: var(--bodyTextColorWhite);
+                opacity: 0.8;
+            }
+
+            .cs-details {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-option {
+                color: var(--bodyTextColorWhite);
+                b {
+                    color: var(--bodyTextColorWhite);
+                }
+            }
+
+            .cs-box {
+                color: var(--bodyTextColorWhite);
+            }
+
+            .cs-quantity {
+                color: var(--bodyTextColorWhite);
+                background-color: var(--medium);
+                border-color: var(--accent);
+            }
+
+            .cs-cart {
+                color: var(--bodyTextColorWhite);
+                background-color: var(--medium);
+                border-color: var(--accent);
+            }
+
+            .cs-price {
+                color: var(--primaryLight);
+            }
+
+            .cs-taxes {
+                color: var(--secondaryLight);
+            }
+
+            .cs-box-number {
+                background-color: var(--medium);
+                border-color: var(--accent);
+            }
+        }
+    }
+}

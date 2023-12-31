@@ -1,0 +1,45 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/product.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+    <section id="int-hero">
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    Product                   -->
+    <!-- ============================================ -->
+    <section id="product">
+        <div class="cs-container">
+            <picture class="cs-large-image">
+                <!--Mobile Image-->
+                <source media="(max-width: 600px)" srcset="{{ shopProduct.images[0].src }}">
+                <!--Tablet and above Image-->
+                <source media="(min-width: 601px)" srcset="{{ shopProduct.images[0].src }}">
+                <img src="{{ shopProduct.images[0].src }}" alt="sofa product" loading="lazy" decoding="async" width="490" height="596">
+            </picture>
+            <div class="cs-product-info">
+                <h3 class="cs-h3">{{ shopProduct.title }}</h3>
+                <span class="cs-price">{{ shopProduct.price }}</span>
+                <span class="cs-compare-price">{{ shopProduct.compareAtPrice }}</span>
+                <span class="cs-taxes">Local taxes included</span>
+                <p class="cs-info-text">
+                    {{ shopProduct.descriptionHtml | safe }}
+                </p>
+                <span class="cs-details">Product Details</span>
+                <div id="cs-buy" data-product-id="{{ shopProduct.idNumber }}"></div>
+            </div>
+        </div>
+    </section>
+
+{% endblock %}

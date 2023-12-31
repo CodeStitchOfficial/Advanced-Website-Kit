@@ -1,6 +1,13 @@
 // Plugin Imports
 const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output");
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
+const pluginShopify = require("eleventy-plugin-shopify");
+
+// Config Imports
+const configShopify = require("./src/config/plugins/shopify");
+
+// Filter Imports
+const filterGetProductsInCollection = require("./src/config/filters/getProductsInCollection");
 
 module.exports = function (eleventyConfig) {
     /**
@@ -17,6 +24,10 @@ module.exports = function (eleventyConfig) {
     // https://www.11ty.dev/docs/plugins/navigation/
     eleventyConfig.addPlugin(pluginEleventyNavigation);
 
+    // Queries your Shopify store at build time to expose product and collection data under the `shopify` global object
+    // https://github.com/dleatherman/eleventy-plugin-shopify
+    eleventyConfig.addPlugin(pluginShopify, configShopify);
+
     /**
      *  PASSTHROUGH'S
      *      Copy/paste non-template files straight to /public, without any interference from the eleventy engine
@@ -28,6 +39,8 @@ module.exports = function (eleventyConfig) {
     eleventyConfig.addPassthroughCopy("./src/assets/images");
     eleventyConfig.addPassthroughCopy("./src/assets/js");
     eleventyConfig.addPassthroughCopy("./src/assets/svgs");
+
+    eleventyConfig.addFilter("getProductsInCollection", filterGetProductsInCollection);
 
     return {
         dir: {

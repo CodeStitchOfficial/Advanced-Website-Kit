@@ -1,0 +1,312 @@
+/*-- -------------------------- -->
+<---   Interior Page Header     -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0em) {
+    #int-hero {
+        min-height: 30vh;
+        padding-top: 9.375rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+    #int-hero:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.7;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #int-hero picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    #int-hero picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #int-hero h1 {
+        font-size: 2.125rem;
+        text-align: center;
+        width: 96%;
+        max-width: 31.25rem;
+        margin: 0 auto;
+        margin-top: 4.375rem;
+        margin-bottom: 1.875rem;
+        color: #fff;
+        position: relative;
+    }
+    #int-hero p {
+        text-align: center;
+        width: 96%;
+        max-width: 25rem;
+        margin: auto;
+        margin-bottom: 1.875rem;
+        color: #fff;
+        display: block;
+    }
+}
+/* Tablet */
+@media only screen and (min-width: 48em) {
+    #int-hero {
+        font-size: 100%;
+    }
+    #int-hero h1 {
+        font-size: 4rem;
+    }
+}
+/* Small Desktop */
+@media only screen and (min-width: 64em) {
+    #int-hero {
+        font-size: inherit;
+        height: auto;
+        min-height: 18.75rem;
+        padding-top: 11.25rem;
+        background-attachment: fixed;
+        padding-block-end: 6.25rem;
+    }
+}
+/*-- -------------------------- -->
+<---          Product           -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #product {
+        padding: var(--sectionPadding);
+        overflow: hidden;
+    }
+    #product .cs-container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: 46.875rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 28px - 64px */
+        gap: clamp(1.75rem, 5vw, 4rem);
+    }
+    #product .cs-large-image {
+        width: 100%;
+        /* 248px - 533px */
+        height: clamp(15.5rem, 70vw, 33.3125rem);
+        display: block;
+    }
+    #product .cs-large-image img {
+        width: 100%;
+        height: 100%;
+        /* as we want to show the product in full, contain the image in the img tag. then, use a matching background color for the whitespace. feel free to remove and use object-fit:cover if you'd rather */
+        object-fit: contain;
+        display: block;
+    }
+    #product .cs-h3 {
+        font-size: var(--headerFontSize);
+        font-weight: 900;
+        line-height: 1.2em;
+        margin: 0 0 0.5rem;
+        color: var(--headerColor);
+    }
+    #product .cs-price {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        color: var(--secondary);
+        display: block;
+    }
+    #product .cs-compare-price {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        text-decoration: line-through;
+        color: #767676;
+        display: block;
+    }
+    #product .cs-taxes {
+        font-size: 0.875rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        color: var(--primary);
+        display: block;
+    }
+    #product .cs-info-text {
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5em;
+        /* 12px - 16px */
+        margin: clamp(0.75rem, 2vw, 1rem) 0 0.5rem;
+        color: var(--bodyTextColor);
+    }
+    #product .cs-details {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        width: fit-content;
+        margin-bottom: 1.5rem;
+        color: var(--bodyTextColor);
+        /* using a border-bottom instead of text-decoration to give more space between the line and the text */
+        border-bottom: 1px solid var(--bodyTextColor);
+        display: block;
+    }
+    #product .cs-option {
+        font-size: 0.875rem;
+        font-weight: 700;
+        line-height: 1.5em;
+        color: var(--bodyTextColor);
+    }
+    #product .cs-dropdown {
+        width: 100%;
+        max-width: 15rem;
+        height: 3rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+        background: #f7f7f7;
+        border: 1px solid #e8e8e8;
+        border-radius: 6.25rem;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+    }
+    #product .cs-quantity {
+        width: 100%;
+        width: fit-content;
+        max-width: 15rem;
+        height: 3rem;
+        margin-bottom: 1.5rem;
+        padding: 0 1rem;
+        background: #f7f7f7;
+        border: 1px solid #e8e8e8;
+        border-radius: 6.25rem;
+        outline: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        gap: 1rem;
+        cursor: pointer;
+    }
+    #product .cs-select-icon {
+        display: none;
+    }
+    #product .cs-quantity-increment {
+        font-size: 1.5rem;
+        color: #767676;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    #product .cs-quantity-decrement {
+        font-size: 1.5rem;
+        color: #767676;
+        background: none;
+        border: none;
+        cursor: pointer;
+    }
+    #product .cs-quantity-input {
+        font-size: 1.25rem;
+        line-height: 1.5em;
+        text-align: center;
+        width: 2rem;
+        background-color: transparent;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #product .cs-quantity-input[type="number"] {
+        margin: 0;
+        -webkit-appearance: none;
+        -moz-appearance: textfield;
+    }
+    #product .cs-button {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        padding: 1rem;
+        background: none;
+        border: none;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex: 1 0 0;
+    }
+    #product .cs-cart {
+        border: 1px solid #1a1a1a;
+    }
+    #product .cs-buy {
+        color: #fff;
+        background-color: var(--primary);
+        cursor: pointer;
+    }
+    .visuallyhidden {
+        white-space: nowrap;
+        width: 1px;
+        height: 1px;
+        position: absolute;
+        overflow: hidden;
+        clip: rect(0 0 0 0);
+        clip-path: inset(50%);
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #product .cs-container {
+        max-width: 80rem;
+        flex-direction: row;
+        align-items: start;
+    }
+    #product .cs-large-image {
+        height: 100%;
+        /* dont grow or shrink and set the flex basis to 540px. the large image will stay at this width and the other content will adapt */
+        flex: 0 0 33.75rem;
+    }
+    #product .cs-product-info {
+        /* grow to fill the rest of the flex-container */
+        flex: 1 0 0;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #product .cs-h3,
+    body.dark-mode #product .cs-info-text,
+    body.dark-mode #product .cs-details,
+    body.dark-mode #product .cs-option,
+    body.dark-mode #product .cs-option b,
+    body.dark-mode #product .cs-box,
+    body.dark-mode #product .cs-quantity,
+    body.dark-mode #product .cs-cart {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #product .cs-price {
+        color: var(--primaryLight);
+    }
+    body.dark-mode #product .cs-taxes {
+        color: var(--secondaryLight);
+    }
+    body.dark-mode #product .cs-info-text {
+        opacity: 0.8;
+    }
+    body.dark-mode #product .cs-box-number,
+    body.dark-mode #product .cs-quantity,
+    body.dark-mode #product .cs-cart {
+        background-color: var(--medium);
+        border-color: var(--accent);
+    }
+}
