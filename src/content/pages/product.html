@@ -1,0 +1,20 @@
+---js
+{
+    "pagination": {
+        "data": "collections.all",
+        "size": 1,
+        "alias": "shopProduct",
+        "addAllPagesToCollections": true,
+        before: function(paginationData, fullData) {
+            return paginationData[0].data.shopProducts
+        }
+    },
+    "eleventyComputed": {
+        "title": "{{ shopProduct.title }}",
+        "description": "{{ shopProduct.description }}",
+        "permalink": "/shop/{{ shopProduct.handle }}/index.html",
+    }    
+}
+---
+
+{% extends "layouts/product.html" %}

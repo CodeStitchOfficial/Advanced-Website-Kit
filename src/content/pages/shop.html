@@ -1,0 +1,181 @@
+---
+title: "The Shopify Branch"
+description: "The Shopify branch of the advanced starter kit. Statically build a basic frontend for a Shopify store,
+fulfilling the needs of a small business with the fastest possible store."
+permalink: "shop/"
+eleventyNavigation:
+    key: "Shop"
+    order: "500" 
+---
+
+{% extends 'layouts/base.html' %}
+
+{#
+    CS-TODO: If you want /shop to display a listing of all products, change this page to extend from
+    'layouts/collection.html' above and remove all other content below this comment
+#}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/shop.css"/>
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-1400">
+        <div class="cs-container">
+            <span class="cs-int-title">Shopify Branch</span>
+            <div class="cs-breadcrumbs">
+                <a href="" class="cs-link">Home</a>
+                <a href="" class="cs-link cs-active">Shopify</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg"/>
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg"/>
+            <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg" alt="people laughing" width="1280" height="568" aria-hidden="true"/>
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                    Stats                     -->
+    <!-- ============================================ -->
+
+    <section id="sbs-297">
+        <div class="cs-container">
+            <!-- Left Image Section -->
+            <div class="cs-image-group">
+                <!--Floating Box-->
+                <div class="cs-box">
+                    <span class="cs-number">100+</span>
+                    <span class="cs-desc">The Fastest Stores Possible</span>
+                    <!--Background image for cs-box-->
+                    <picture class="cs-box-picture">
+                        <source media="(max-width: 600px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice-m.jpg"/>
+                        <source media="(min-width: 601px)" srcset="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice.jpg"/>
+                        <img loading="lazy" decoding="async" src="https://csimg.nyc3.digitaloceanspaces.com/SideBySide/justice.jpg" alt="greek pillars" width="521" height="672" aria-hidden="true"/>
+                    </picture>
+                </div>
+                <!--Big Background Image-->
+                <picture class="cs-picture">
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg"/>
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg"/>
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/business-meeting.jpeg" alt="greek pillars" width="521" height="672" aria-hidden="true"/>
+                </picture>
+            </div>
+            <!-- Right Content Section-->
+            <div class="cs-content">
+                <span class="cs-topper">Statically Generated Stores</span>
+                <h2 class="cs-title">eCommerce Without the Bloat</h2>
+                <p class="cs-text">
+                    Separating the Storefront from the eCommerce platform allows for full developmental freedom when it comes to building web shops. The Advanced Kit has found a way to link Shopify and Eleventy to deliver lightning-fast stores that are dynamic to a merchant's Shopify backend.
+                </p>
+                <p class="cs-text">
+                    The Kit takes advantage of Eleventy's Computed Data to modify the incoming Shopify data just before the page is rendered, providing product and collection data under the global "shopProducts" and "shopCollections" data variables.
+                </p>
+                <p class="cs-text">
+                    While a lot of the heavy lifting is done for you, we still strongly advise having a basic level of familiarity with the Shopify ecosystem. As a developer, you will be responsible for setting up the Shopify Store, answering questions around it, and performing any maintainence tasks that appear.
+                </p>
+                <p class="cs-text">
+                    There are also some limitations to this kit. To ensure full synchronisation between Shopify and the website, a rebuild will be triggered everytime a product is created, updated or deleted. Additionally, any custom functionality (search, user authentication, reviews) will need to be built yourself, as Shopify Apps won't work here.
+                </p>
+                <p class="cs-text">
+                    However, for smaller clients with a limited range of products and fewer needs, the performance benefits of this headless system provide a edge in an otherwise competitive industry.
+                </p>
+                <a class="cs-button-solid" aria-label="learn more about our programs" href="">Learn More</a >
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    Stats                     -->
+    <!-- ============================================ -->
+
+    <section id="stats-1642">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Getting Started</span>
+                <h2 class="cs-title">3 Steps to Success</h2>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people.jpg"/>
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people.jpg"/>
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people.jpg" alt="people" width="608" height="406"/>
+                </picture>
+            </div>
+            <div class="cs-stats-group">
+                <!--Red Quote-->
+                <img class="cs-quote" aria-hidden="true" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/pink-quotes.svg" decoding="async" alt="quote icon" width="120" height="99"/>
+                <p class="cs-text">
+                    If you haven't already, we advise managing your clients through a <a href="https://partners.shopify.com/">Shopify Partners account</a>. This will allow you to manage all clients from one account, as well as providing financial benefits to stores you create for your clients. From the Partners admin page, follow the below steps.
+                </p>
+                <ul class="cs-card-group">
+                    <li class="cs-item">
+                        <div class="wrapper">
+                            <span class="cs-item-number">01</span>
+                            <h3 class="cs-h3">Create the Store</h3>
+                        </div>
+                        <p class="cs-item-text">
+                            From the "Stores" page, click "Add store" to create a new development store. Follow the wizard to create a new store for a client.
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <div class="wrapper">
+                            <span class="cs-item-number">02</span>
+                            <h3 class="cs-h3">Set up the Custom App</h3>
+                        </div>
+                        <p class="cs-item-text">
+                            When signed into the client's development store, go to <b>Settings | Apps and sales channels | Develop Apps</b> and create a new App. Give it a name, and configure the store to have access to all areas of the Storefront API.
+                        </p>
+                    </li>
+                    <li class="cs-item">
+                        <div class="wrapper">
+                            <span class="cs-item-number">03</span>
+                            <h3 class="cs-h3">Link to the Project</h3>
+                        </div>
+                        <p class="cs-item-text">
+                            From the <b>API Credentials</b> tab, you can find a <b>Storefront API access token</b>. Use this in the .env file of the project. You will also need to replace the Store URL, which can be found in the top-left corner of the settings popover in Shopify.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                Side By Side                  -->
+    <!-- ============================================ -->
+
+    <section id="sbs-1640">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Extending beyond the defaul</span>
+                <h2 class="cs-title">Using Shopify Data, Carts and Checkouts</h2>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/talking.jpg" alt="people" width="608" height="406">
+                </picture>
+            </div>
+            <div class="cs-stats-group">
+                <p class="cs-text">
+                    You can access the simplified data that we've modified with shopProducts and shopCollections. The raw data, direct from the Storefront API, can be accessed with shopify.products and shopify.collections. The "dump" filter may be useful here to output the full data tree onto the page.
+                </p>
+                <p class="cs-text">
+                    Cart and checkout functionality is provided by the <a href="https://shopify.github.io/buy-button-js/">BuyButtonJS library</a>. A product page can be set up by defining an element containing a <code>data-product-id</code> attribute, with the product idNumber as a value. The buy button, variant toggle, and quantity button will then appear in a div with an id of cs-buy. 
+                </p>
+                <p class="cs-text">
+                    More detailed guidance on how to set up an eCommerce store can be found in the project README.
+                </p>
+            </div>
+        </div>
+    </section>
+{% endblock %}

@@ -1,0 +1,227 @@
+/*-- -------------------------- -->
+<---   Interior Page Header     -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0em) {
+    #int-hero {
+        min-height: 30vh;
+        padding-top: 9.375rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+    }
+    #int-hero:before {
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.7;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #int-hero picture {
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -2;
+    }
+    #int-hero picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+    #int-hero h1 {
+        font-size: 2.13333333rem;
+        text-align: center;
+        width: 96%;
+        max-width: 31.25rem;
+        margin: 0 auto;
+        margin-top: 4.375rem;
+        margin-bottom: 1.875rem;
+        color: #fff;
+        position: relative;
+    }
+    #int-hero p {
+        text-align: center;
+        width: 96%;
+        max-width: 25rem;
+        margin: auto;
+        margin-bottom: 1.875rem;
+        color: #fff;
+        display: block;
+    }
+}
+/* Tablet */
+@media only screen and (min-width: 48em) {
+    #int-hero {
+        font-size: 100%;
+    }
+    #int-hero h1 {
+        font-size: 4rem;
+    }
+}
+/* Small Desktop */
+@media only screen and (min-width: 64em) {
+    #int-hero {
+        font-size: inherit;
+        height: auto;
+        min-height: 18.75rem;
+        padding-top: 11.25rem;
+        background-attachment: fixed;
+        padding-block-end: 6.25rem;
+    }
+}
+/*-- -------------------------- -->
+  <---        Collection          -->
+  <--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #collection {
+        padding: var(--sectionPadding);
+    }
+    #collection .cs-container {
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+        position: relative;
+        z-index: 1;
+    }
+    #collection .cs-card-group {
+        width: 100%;
+        margin: 0;
+        padding: 0;
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(auto-fit, minmax(19.0625rem, 1fr));
+        /* 16px - 20px */
+        column-gap: clamp(1rem, 3vw, 1.25rem);
+        /* 16px - 40px */
+        row-gap: clamp(1rem, 3vw, 2.5rem);
+        position: relative;
+        transform-style: preserve-3d;
+    }
+    #collection .cs-item {
+        max-width: 18.5rem;
+        padding: 1rem;
+        border: 1px solid #e8e8e8;
+    }
+    #collection .cs-item:hover .cs-picture img {
+        transform: scale(1.05);
+    }
+    #collection .cs-link {
+        text-decoration: none;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+    }
+    #collection .cs-image-group {
+        width: auto;
+        height: 18.75rem;
+        margin-bottom: 1.25rem;
+        position: relative;
+    }
+    #collection .cs-picture {
+        width: 100%;
+        height: 100%;
+        display: block;
+        overflow: hidden;
+    }
+    #collection .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: transform 0.3s;
+    }
+    #collection .cs-offer {
+        font-size: 0.8125rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        text-transform: uppercase;
+        letter-spacing: 1.3px;
+        padding: 0.375rem;
+        color: #fff;
+        background: #ff4747;
+        position: absolute;
+        top: 0.75rem;
+        right: 0.75rem;
+    }
+    #collection .cs-product {
+        /* 20px - 24px */
+        font-size: clamp(1.25rem, 3vw, 1.5rem);
+        font-weight: 700;
+        line-height: 1.2em;
+        margin: 0;
+        color: var(--headerColor);
+    }
+    #collection .cs-wrapper {
+        margin-top: 1.25rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #collection .cs-info {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+    }
+    #collection .cs-price {
+        font-size: 1.25rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        color: var(--primary);
+    }
+    #collection .cs-old-price {
+        font-size: 1rem;
+        font-weight: 700;
+        line-height: 1.2em;
+        text-decoration: line-through;
+        color: #767676;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #collection .cs-item {
+        max-width: none;
+    }
+    #collection .cs-image-group {
+        height: clamp(12rem, 23vw, 20rem);
+    }
+}
+/* Small Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #collection .cs-card-group {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #collection .cs-offer,
+    body.dark-mode #collection .cs-product,
+    body.dark-mode #collection .cs-price,
+    body.dark-mode #collection .cs-old-price {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #collection .cs-item:hover .cs-picture {
+        background-color: rgba(255, 255, 255, 0.2);
+    }
+    body.dark-mode #collection .cs-picture {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+}

@@ -1,0 +1,61 @@
+{% extends "layouts/base.html" %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/collection.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                    LANDING                   -->
+    <!-- ============================================ -->
+
+    <section id="int-hero">
+        <h1 id="home-h">{{ shopCollection.title }}</h1>
+        <picture>
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg">
+            <img aria-hidden="true" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Landscapes/waves.jpg" alt="kitchen cabinets" loading="eager" width="2500" height="1667">
+        </picture>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                 Collection                   -->
+    <!-- ============================================ -->
+
+    <section id="collection">
+        <div class="cs-container">
+            <div class="cs-card-group">
+                {% for product in shopProducts | getProductsInCollection(shopCollection.idNumber) %}
+                    {% if product.images | length > 0 %}
+                        <div class="cs-item">
+                            <a href="/shop/{{ product.handle }}" class="cs-link">
+                                <div class="cs-image-group">
+                                    <picture class="cs-picture">
+                                        <img loading="lazy" decoding="async" src="{{ product.images[0].src }}" alt="{{ product.images[0].altText or 'a product from Gill Rush' }}" width="1280" height="568">
+                                    </picture>
+                                    {% if product.saleAmount %}
+                                        <span class="cs-offer">
+                                            {{ product.saleAmount }}% Off!
+                                        </span>
+                                    {% endif %}
+                                </div>
+                                <div class="cs-details">
+                                    <h3 class="cs-product">{{ product.title }}</h3>
+                                    <div class="cs-wrapper">
+                                        <div class="cs-flex">
+                                            <span class="cs-price">{{ product.price }}</span>
+                                            {% if product.compareAtPrice %}
+                                                <span class="cs-old-price">{{ product.compareAtPrice }}</span>
+                                            {% endif %}
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
+                        </div>
+                    {% endif %}
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+{% endblock %}
