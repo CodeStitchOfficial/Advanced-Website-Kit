@@ -1,0 +1,219 @@
+---
+title: "The Optimization Branch"
+description: "The optimation branch of the advanced starter kit. Provides tools to optimise your website in an efficient way, including minification, bundling, automatic inlining of critical CSS, automatic asset optimization and a PostCSS pipeline."
+permalink: 'optimization/'
+eleventyNavigation:
+    key: 'Optimization'
+    order: '300'
+---
+
+{% extends 'layouts/base.html' %}
+
+{% block head %}
+    <link rel="stylesheet" href="/assets/css/optimization.css">
+{% endblock %}
+
+{% block body %}
+    <!-- ============================================ -->
+    <!--                   Banner                     -->
+    <!-- ============================================ -->
+
+    <div id="banner-1400">
+        <div class="cs-container">
+            <span class="cs-int-title">Optimization Branch</span>
+            <div class="cs-breadcrumbs">
+                <a href="" class="cs-link">Home</a>
+                <a href="" class="cs-link cs-active">Optimization</a>
+            </div>
+        </div>
+        <!--Background Image-->
+        <picture class="cs-background">
+            <!--Mobile Image-->
+            <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg">
+            <!--Tablet and above Image-->
+            <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg">
+            <img decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/People/people-laughing.jpg" alt="people laughing" width="1280" height="568" aria-hidden="true">
+        </picture>
+    </div>
+
+    <!-- ============================================ -->
+    <!--                    Steps                     -->
+    <!-- ============================================ -->
+
+    <section id="steps-1376">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Five Features for Faster Sites</span>
+                <h2 class="cs-title">Helping You Smash Those Pagespeed Scores Quicker</h2>
+            </div>
+            <!--
+            We had to use a div here because of the grouping we had to do to make the staggerd design work. We needed to create two groups, one with 3 cards and one with 2 cards so we can arrange the cards separately to create the design we need to create. 
+        -->
+            <div class="cs-card-group">
+                <div class="cs-group1">
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <img class="cs-icon" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-asset.svg" alt="icon"
+                            width="48" height="48"/>
+                        </picture>
+                        <h3 class="cs-h3">Minification</h3>
+                        <p class="cs-item-text">
+                            Removing comments and whitespace from HTML, CSS and JS files
+                        </p>
+                    </div>
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <img class="cs-icon" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-image.svg" alt="icon" width="32"
+                            height="32"/>
+                        </picture>
+                        <h3 class="cs-h3">Asset Optimization</h3>
+                        <p class="cs-item-text">
+                            Opt-in to have img tags converted into responsive, optimised pictures
+                        </p>
+
+                    </div>
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <img class="cs-icon" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-pipeline.svg" alt="icon" width="32"
+                            height="32"/>
+                        </picture>
+                        <h3 class="cs-h3">CSS/JS Pipelines</h3>
+                        <p class="cs-item-text">
+                            CSS & JS are processed by 11ty, and can be extended with PostCSS and esbuild
+                        </p>
+                    </div>
+                </div>
+                <div class="cs-group2">
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <img class="cs-icon" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-critical.svg" alt="icon" width="32"
+                            height="32"/>
+                        </picture>
+                        <h3 class="cs-h3">Critical CSS</h3>
+                        <p class="cs-item-text">
+                            Automatic inlining of CSS above the fold
+                        </p>
+                    </div>
+                    <div class="cs-item">
+                        <picture class="cs-picture">
+                            <img class="cs-icon" loading="lazy" decoding="async"
+                            src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/adv-kit-map.svg" alt="icon" width="32"
+                            height="32"/>
+                        </picture>
+                        <h3 class="cs-h3">Automatic Sitemap Generation</h3>
+                        <p class="cs-item-text">
+                            Boost your SEO with a sitemap that changes on every build
+                        </p>
+                    </div>
+                </div>
+                <picture class="cs-waves">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 1023px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-tablet.svg">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 1024px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-desktop.svg">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/Graphics/wave-desktop.svg" alt="wave" width="1280" height="568">
+                </picture>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================ -->
+    <!--                    FAQ                       -->
+    <!-- ============================================ -->
+
+    <section id="faq-1108">
+        <div class="cs-container">
+            <div class="cs-content">
+                <span class="cs-topper">Explaination</span>
+                <h2 class="cs-title">Each feature, explained</h2>
+                <p class="cs-text">Each feature is supplied by an 11ty plugin, which is briefly explained with appropriate documentation supplied in the .eleventy.js file. We have elaborated a little more on what each feature does in the dropdowns to the right, but we would recommend reviewing the docs for each plugin if you want to customise things yourself.</p>
+                <picture class="cs-picture">
+                    <!--Mobile Image-->
+                    <source media="(max-width: 600px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-presentation.png">
+                    <!--Tablet and above Image-->
+                    <source media="(min-width: 601px)" srcset="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-presentation.png">
+                    <img loading="lazy" decoding="async" src="https://csimg.nyc3.cdn.digitaloceanspaces.com/Images/MISC/agency-presentation.png" alt="appliance" width="522" height="400">
+                </picture>
+            </div>
+            <div class="cs-flex-group">
+                <ul class="cs-faq-group">
+                    <!-- Active class added as default -->
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                Minification
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            All code, when deployed, will be minified. HTML and CSS is minified via the "eleventy-plugin-files-minifier", whereas JS is minified as part of the esbuild pipeline. During development, we skip this minification step so you can keep the comments in the dev tools, to make development easier.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                Critical CSS
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            The "eleventy-critical-css" plugin takes all the CSS rendered above-the-fold on a 1920x1080 display and inlines it into the document head. Note that this CSS, by default, is not removed from the stylesheets, as this would make them uncacheable between pages. This is an option that can be modified, with further details found in the docs.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                Asset Optimization (Opt-in)
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            You can opt-in to asset optimization, where any standalone img tags will be converted into a full picture/source tag, complete with generation of responsive images. This requires some extra configuration, so it's been left as an opt-in feature. More details can be found in src/config/plugins/image.js
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                Automatic Sitemap Generation
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            No more having to generate sitemaps yourself! This plugin generates a sitemap based on all templates that are passed through eleventy. Config and Asset files are excluded via their respective 11tydata.js files. Pairs well with the CMS kit to automatically include posts into the sitemap on rebuild.
+                        </p>
+                    </li>
+                    <li class="cs-faq-item">
+                        <button class="cs-button">
+                            <span class="cs-button-text">
+                                CSS/JS Pipelines
+                            </span>
+                        </button>
+                        <p class="cs-item-p">
+                            CSS and JS files are passed through as templates, allowing for modification at build-time. Configuration for this can be found in src/config/eleventy.
+                        </p>
+                        <p class="cs-item-p">
+                            CSS passes through a minimalistic PostCSS configuration set up to automatically prefix styles with the necessary vendor prefixes. You can add any other PostCSS plugin as you would normally via its JS API. Purging unneeded CSS? Polyfilling the latest sytax? Linting? All possible!
+                        </p>
+                        <p class="cs-item-p">
+                            JS runs through an esbuild configuration where code is bundled (if using imports) and minified (in production only). By default, all files are passed through, bundling where necessary, with the same path as provided in src/.
+                        </p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    {# Inlining the script tag to make it easier when merging #}
+    <script>
+        const faqItems = Array.from(document.querySelectorAll('.cs-faq-item'));
+        for (const item of faqItems) {
+            const onClick = () => {
+                item
+                    .classList
+                    .toggle('active')
+            }
+            item.addEventListener('click', onClick)
+        }
+    </script>
+
+{% endblock %}

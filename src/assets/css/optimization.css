@@ -1,0 +1,611 @@
+/*-- -------------------------- -->
+<---          Banner            -->
+<--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #banner-1400 {
+        padding: var(--sectionPadding);
+        /* 190px - 268px */
+        padding-top: clamp(11.875rem, 25vw, 16.75rem);
+        padding-bottom: 6.25rem;
+        position: relative;
+        z-index: 1;
+        /* clips the line from causing overflow issues for going off screen */
+        overflow: hidden;
+    }
+    #banner-1400 .cs-container {
+        text-align: center;
+        width: 100%;
+        max-width: 80rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        /* 8px - 12px */
+        gap: clamp(0.5rem, 1vw, 0.75rem);
+    }
+    #banner-1400 .cs-int-title {
+        /* 39px - 61px */
+        font-size: clamp(2.4375rem, 6.4vw, 3.8125rem);
+        font-weight: 900;
+        line-height: 1.2em;
+        text-align: inherit;
+        margin: 0;
+        color: var(--bodyTextColorWhite);
+        position: relative;
+    }
+    #banner-1400 .cs-breadcrumbs {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    #banner-1400 .cs-link {
+        font-size: 1rem;
+        line-height: 1.2em;
+        text-decoration: none;
+        color: var(--bodyTextColorWhite);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+    }
+    #banner-1400 .cs-link:last-of-type {
+        /* remove the chevron on the last list item */
+    }
+    #banner-1400 .cs-link:last-of-type::after {
+        display: none;
+    }
+    #banner-1400 .cs-link:after {
+        /* chevron */
+        content: "";
+        width: 0.4375rem;
+        height: 0.75rem;
+        margin: 0 1rem;
+        background: url("https://csimg.nyc3.cdn.digitaloceanspaces.com/Icons/white-chev.svg");
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+        display: block;
+        position: relative;
+    }
+    #banner-1400 .cs-link.cs-active {
+        color: var(--primary);
+    }
+    #banner-1400 .cs-background {
+        width: 100%;
+        height: 100%;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+    #banner-1400 .cs-background:before {
+        /* gradient overlay */
+        content: "";
+        width: 100%;
+        height: 100%;
+        background: #000;
+        opacity: 0.4;
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 1;
+    }
+    #banner-1400 .cs-background:after {
+        /* gradient overlay */
+        content: "";
+        width: 100%;
+        height: 40%;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            left bottom,
+            from(#000000),
+            to(rgba(0, 0, 0, 0))
+        );
+        background: -o-linear-gradient(top, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(
+            to bottom,
+            #000000 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        z-index: 2;
+    }
+    #banner-1400 .cs-background img {
+        width: 100%;
+        height: 100%;
+        /* Makes img tag act as a background image */
+        object-fit: cover;
+        position: absolute;
+        top: 0;
+        left: 0;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #banner-1400 .cs-background:before {
+        width: 50%;
+        height: 100%;
+        background: -webkit-gradient(
+            linear,
+            left top,
+            right top,
+            from(#000000),
+            to(rgba(0, 0, 0, 0))
+        );
+        background: -o-linear-gradient(left, #000000 0%, rgba(0, 0, 0, 0) 100%);
+        background: linear-gradient(
+            to right,
+            #000000 0%,
+            rgba(0, 0, 0, 0) 100%
+        );
+        opacity: 1;
+    }
+}
+/*-- -------------------------- -->
+  <---           Steps            -->
+  <--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #steps-1376 {
+        padding: var(--sectionPadding);
+        /* clips the waves and lines from cause overflow issues */
+        overflow: hidden;
+    }
+    #steps-1376 .cs-container {
+        width: 100%;
+        max-width: 90rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 48px - 64px */
+        gap: clamp(3rem, 6vw, 4rem);
+    }
+    #steps-1376 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+    #steps-1376 .cs-title {
+        max-width: 25ch;
+        margin: 0;
+    }
+    #steps-1376 .cs-group1,
+    #steps-1376 .cs-group2 {
+        /* the contents of this div are no longer its children. This div acts as if it doesn't exist and their content is now children of the next level parent, in this case, the cs-card-group. That way they can all be arranged together as children under 1 parent div instead of children in two different parent divs */
+        display: contents;
+    }
+    #steps-1376 .cs-card-group {
+        width: 100%;
+        margin: 0 auto;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        /* 16px - 20px */
+        gap: clamp(1rem, 2.3vw, 1.25rem);
+        position: relative;
+    }
+    #steps-1376 .cs-item {
+        text-align: center;
+        list-style: none;
+        width: 100%;
+        max-width: 15rem;
+        height: 15rem;
+        margin: 0;
+        /* prevents padding and border from affecting height and width */
+        box-sizing: border-box;
+        padding: 1.5rem;
+        background-color: #f4f4f4;
+        border: 1px solid #e8e8e8;
+        border-radius: 50%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        z-index: 1;
+        /* clips the :before element from being clickable when it's outside the item and triggering the hover animation */
+        overflow: hidden;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+    #steps-1376 .cs-item:before {
+        content: "";
+        width: 9.25rem;
+        height: 9.25rem;
+        background: #fff;
+        opacity: 0;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: -7.25rem;
+        transform: translateY(6.25rem);
+        transition: left 0.3s, transform 0.3s, opacity 0.3s;
+    }
+    #steps-1376 .cs-item:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+    #steps-1376 .cs-item:hover:before {
+        opacity: 0.2;
+        left: -1rem;
+        transform: translateY(0);
+    }
+    #steps-1376 .cs-item:hover .cs-icon {
+        filter: grayscale(1) brightness(1000%);
+    }
+    #steps-1376 .cs-item:hover .cs-h3,
+    #steps-1376 .cs-item:hover .cs-item-text {
+        color: var(--bodyTextColorWhite);
+    }
+    #steps-1376 .cs-item:hover .cs-text {
+        opacity: 0.8;
+    }
+    #steps-1376 .cs-picture {
+        width: 6.25rem;
+        height: auto;
+        margin: 0 0 0.5rem 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+    #steps-1376 .cs-icon {
+        width: 2rem;
+        height: auto;
+    }
+    #steps-1376 .cs-h3 {
+        font-size: 1.25rem;
+        font-weight: bold;
+        line-height: 1.2em;
+        text-align: inherit;
+        margin: 0 0 0.75rem 0;
+        color: var(--headerColor);
+        transition: color 0.3s;
+    }
+    #steps-1376 .cs-item-text {
+        font-size: 0.875rem;
+        line-height: 1.5em;
+        max-width: 28.125rem;
+        margin: 0;
+        padding: 0;
+        color: var(--bodyTextColor);
+        transition: color 0.3s, opacity 0.3s;
+    }
+    #steps-1376 .cs-waves {
+        display: none;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #steps-1376 .cs-card-group {
+        justify-content: center;
+        align-items: center;
+        gap: 2.5rem;
+    }
+    #steps-1376 .cs-group1 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: center;
+        gap: 3rem;
+    }
+    #steps-1376 .cs-group2 {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: center;
+        gap: 3rem;
+    }
+    #steps-1376 .cs-item {
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+    #steps-1376 .cs-waves {
+        width: 4.4375rem;
+        height: auto;
+        display: block;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+    }
+    #steps-1376 .cs-waves img {
+        width: 100%;
+        height: auto;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #steps-1376 .cs-card-group {
+        flex-direction: column;
+    }
+    #steps-1376 .cs-group1 {
+        width: 100%;
+        /* -8px to -30px, we put the clamp in a calc function to turn it into a negative number and pull down to cause the overlapping effect */
+        margin-bottom: calc(clamp(0.5rem, 2vw, 1.875rem) * -1);
+        flex-direction: row;
+    }
+    #steps-1376 .cs-group2 {
+        width: 100%;
+        /* -8px to -30px */
+        margin-top: calc(clamp(0.5rem, 2vw, 1.875rem) * -1);
+        flex-direction: row;
+    }
+    #steps-1376 .cs-waves {
+        width: 110vw;
+        max-width: 120rem;
+        height: auto;
+    }
+    #steps-1376 .cs-waves:before {
+        /* left continuation line */
+        content: "";
+        width: 50vw;
+        height: 4px;
+        background: #e8e8e8;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: 5.25rem;
+        right: 100%;
+    }
+    #steps-1376 .cs-waves:after {
+        /* Right continuation line */
+        content: "";
+        width: 50vw;
+        height: 4px;
+        background: #e8e8e8;
+        opacity: 1;
+        display: block;
+        position: absolute;
+        top: 5.25rem;
+        left: 100%;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #steps-1376 {
+        background-color: rgba(0, 0, 0, 0.2);
+    }
+    body.dark-mode #steps-1376 .cs-item {
+        background-color: var(--medium);
+        border-color: rgba(255, 255, 255, 0.2);
+    }
+    body.dark-mode #steps-1376 .cs-item:hover {
+        background-color: var(--primary);
+        border-color: var(--primary);
+    }
+    body.dark-mode #steps-1376 .cs-topper {
+        color: var(--primary);
+    }
+    body.dark-mode #steps-1376 .cs-title,
+    body.dark-mode #steps-1376 .cs-text,
+    body.dark-mode #steps-1376 .cs-h3,
+    body.dark-mode #steps-1376 .cs-item-text,
+    body.dark-mode #steps-1376 .cs-link {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #steps-1376 .cs-text,
+    body.dark-mode #steps-1376 .cs-item-text {
+        opacity: 0.8;
+    }
+    body.dark-mode #steps-1376 .cs-waves {
+        opacity: 0.1;
+    }
+}
+/*-- -------------------------- -->
+  <---            FAQ             -->
+  <--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    #faq-1108 {
+        padding: var(--sectionPadding);
+        position: relative;
+    }
+    #faq-1108 .cs-container {
+        width: 100%;
+        /* changes to 1280px at desktop */
+        max-width: 36.5rem;
+        margin: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        /* 32px - 48px */
+        gap: clamp(2rem, 6vw, 3rem);
+    }
+    #faq-1108 .cs-content {
+        /* set text align to left if content needs to be left aligned */
+        text-align: center;
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        /* centers content horizontally, set to flex-start to left align */
+        align-items: center;
+    }
+    #faq-1108 .cs-text {
+        /* 32px - 48px */
+        margin: 0 0 clamp(2rem, 5vw, 3rem);
+    }
+    #faq-1108 .cs-picture {
+        width: 100%;
+        /* 360px - 400px */
+        height: clamp(22.5rem, 54vw, 25rem);
+        display: block;
+        position: relative;
+    }
+    #faq-1108 .cs-picture img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    #faq-1108 .cs-faq-group {
+        width: 100%;
+        max-width: 40.625rem;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: 0.75rem;
+    }
+    #faq-1108 .cs-faq-item {
+        list-style: none;
+        width: 100%;
+        background-color: #f7f7f7;
+        /* clips all corners of the button that overlap the rounded border */
+        overflow: hidden;
+        transition: border-bottom 0.3s;
+    }
+    #faq-1108 .cs-faq-item.active .cs-button {
+        color: var(--primary);
+    }
+    #faq-1108 .cs-faq-item.active .cs-button:before {
+        background-color: var(--primary);
+        transform: rotate(315deg);
+    }
+    #faq-1108 .cs-faq-item.active .cs-button:after {
+        background-color: var(--primary);
+        transform: rotate(-315deg);
+    }
+    #faq-1108 .cs-faq-item.active .cs-item-p {
+        height: auto;
+        /* 20px - 24px bottom */
+        /* 16px - 24px left & right */
+        padding: 0 clamp(1rem, 2vw, 1.5rem) clamp(1.25rem, 1.3vw, 1.5rem);
+        opacity: 1;
+    }
+    #faq-1108 .cs-button {
+        /* 16px - 20px */
+        font-size: clamp(1rem, 2.5vw, 1.25rem);
+        font-weight: bold;
+        line-height: 1.2em;
+        text-align: left;
+        width: 100%;
+        /* 20px - 24px */
+        padding: clamp(1.25rem, 2vw, 1.5rem);
+        color: var(--headerColor);
+        background-color: #f7f7f7;
+        border: none;
+        display: block;
+        position: relative;
+        transition: background-color 0.3s, color 0.3s;
+    }
+    #faq-1108 .cs-button:hover {
+        cursor: pointer;
+    }
+    #faq-1108 .cs-button:before {
+        /* left line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 1.5rem;
+        transform: rotate(45deg);
+        transition: transform 0.5s;
+        /* animate the transform from the left side of the x axis, and the center of the y */
+        transform-origin: left center;
+    }
+    #faq-1108 .cs-button:after {
+        /* right line */
+        content: "";
+        width: 0.5rem;
+        height: 0.125rem;
+        background-color: var(--headerColor);
+        opacity: 1;
+        border-radius: 50%;
+        display: block;
+        position: absolute;
+        top: 50%;
+        right: 1.3125rem;
+        transform: rotate(-45deg);
+        transition: transform 0.5s;
+        /* animate the transform from the right side of the x axis, and the center of the y */
+        transform-origin: right center;
+    }
+    #faq-1108 .cs-button-text {
+        width: 80%;
+        display: block;
+    }
+    #faq-1108 .cs-item-p {
+        /* 14px - 16px */
+        font-size: clamp(0.875rem, 1.5vw, 1rem);
+        line-height: 1.5em;
+        width: 90%;
+        height: 0;
+        margin: 0;
+        /* 16px - 24px */
+        padding: 0 clamp(1rem, 2vw, 1.5rem);
+        color: var(--bodyTextColor);
+        opacity: 0;
+        /* clips the text so it doesn't show up */
+        overflow: hidden;
+        transition: opacity 0.3s, padding-bottom 0.3s;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #faq-1108 .cs-container {
+        max-width: 80rem;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: stretch;
+    }
+    #faq-1108 .cs-content {
+        text-align: left;
+        width: 40%;
+        align-items: flex-start;
+        /* prevents flexbox from squishing it */
+        flex: none;
+    }
+}
+/* Dark Mode */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #faq-1108 .cs-title,
+    body.dark-mode #faq-1108 .cs-item-p {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #faq-1108 .cs-faq-item {
+        background-color: var(--accent);
+    }
+    body.dark-mode #faq-1108 .cs-faq-item.active .cs-button {
+        color: var(--bodyTextColorWhite);
+        background-color: var(--primary);
+    }
+    body.dark-mode #faq-1108 .cs-faq-item.active .cs-button:before,
+    body.dark-mode #faq-1108 .cs-faq-item.active .cs-button:after {
+        background-color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode #faq-1108 .cs-faq-item.active .cs-item-p {
+        /* 20px - 24px */
+        padding-top: clamp(1.25rem, 1.3vw, 1.5rem);
+    }
+    body.dark-mode #faq-1108 .cs-button {
+        color: var(--bodyTextColorWhite);
+        background-color: var(--accent);
+    }
+    body.dark-mode #faq-1108 .cs-button:before,
+    body.dark-mode #faq-1108 .cs-button:after {
+        background-color: var(--bodyTextColorWhite);
+    }
+}
