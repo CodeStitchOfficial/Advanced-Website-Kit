@@ -4,6 +4,8 @@
     "description": "CodeStitch's Advanced Starter Kit. A kit designed for agency's and freelancers who are knowledgable in HTML, CSS, JS and SSGs, who are wanting to delivery any feature a small to medium business would need",
     "main": "index.js",
     "scripts": {
+        "build:less": "less-watch-compiler --run-once ./src/assets/less ./src/assets/css",
+        "watch:less": "less-watch-compiler ./src/assets/less ./src/assets/css",
         "build:eleventy": "cross-env ELEVENTY_ENV=PROD eleventy",
         "watch:eleventy": "cross-env ELEVENTY_ENV=DEV eleventy --serve",
         "start": "run-p watch:*",
@@ -24,7 +26,8 @@
         "@11ty/eleventy-navigation": "^0.3.5",
         "@11ty/eleventy-plugin-directory-output": "^1.0.1",
         "cross-env": "^7.0.3",
-        "netlify-plugin-cache": "^1.0.3",
+        "less": "^4.2.0",
+        "less-watch-compiler": "^1.16.3",
         "npm-run-all": "^4.1.5"
     }
 }
