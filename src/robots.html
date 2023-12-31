@@ -1,0 +1,13 @@
+---
+permalink: /robots.txt
+layout: null
+eleventyExcludeFromCollections: true
+---
+User-agent: *
+Disallow: /admin/
+Allow: /
+
+Sitemap: {{ client.domain }}/sitemap.xml
+{#- Automatically generates a robots.txt from the domain in client.json -#}
+{#- A .prettierignore file is needed in the project root to stop autoformatting from ruining this. You can also use the command palette to save without formatting -#}
+{#- Feel free to modify as needed - by default, the /admin path is blocked from robots (for the CMS branch) -#}

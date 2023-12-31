@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+    <head>
+        {#
+        Created with help from the below repo, outlining all the possible tags that could belong in a <head>.
+        View to explore more tags that may be useful, depending on the type of website being built
+        https://github.com/joshbuchea/HEAD
+        #}
+
+        {# CS-TODO: Update the _data/client.json file to automatically generate the correct <head> tags for you #}
+
+        <!-- UTF character encoding means all characters under UTF-8, including emojis, render correctly -->
+        <meta charset="UTF-8">
+
+        <!-- Ensures the viewport widths are defined correctly and work on all devices (esp. mobile) -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+
+        <!-- May be used in SERP results. Search Engines may also change them, at their discretion. Good to set anyway -->
+        <meta name="description" content="{{ description }}">
+
+        <!-- Identifies eleventy as the generator for this document. Shows in apps like Wappalyzer or BuiltWith. Proves that you're a worthy developer that cares about your product -->
+        <meta name="generator" content="{{ eleventy.generator }}">
+
+        <!-- Open Graph tags to improve how the website shows up on social media -->
+        {# CS-TODO: Change the OG Tags (image, in particular) to something appropriate for your client #}
+        <meta property="og:title" content="{{ title }}">
+        <meta property="og:description" content="{{ description }}">
+        <meta property="og:url" content="{{ client.domain }}{{ page.url }}">
+        <meta property="og:type" content="website">
+        <meta property="og:image" content="https://codestitch.app/frontend/images/logo.png">
+        <meta property="og:site_name" content="{{ client.name }}">
+        <meta property="og:locale" content="en_US">
+        <meta property="og:image:width" content="1421">
+        <meta property="og:image:height" content="180">
+
+        <!-- Helps prevent duplicate content issues -->
+        <link rel="canonical" href="{{ client.domain }}{{ page.url }}">
+
+        <!-- Sitewide Stylesheets -->
+        <link rel="stylesheet" href="/assets/css/root.css">
+        <link rel="stylesheet" href="/assets/css/dark.css">
+
+        <!-- Sitewide Scripts -->
+        <script src="/assets/js/dark.js" defer></script>
+        <script src="/assets/js/nav.js" defer></script>
+
+        <!-- Use a head block in any layout extending from base.html to include page-specific <head> tags. It will be included here -->
+        {# CS-TODO: Contrary to the Intermediate Kit, all preloads will need to be done manually from the pages head block. This is so responsive preloads can be achieved when using the optimization branch #}
+        {# https://web.dev/articles/preload-responsive-images #}
+        {% block head %}{% endblock %}
+
+        <!-- Uses the title directly from the frontmatter of the page -->
+        <title>{{ title }}</title>
+    </head>
+    <body>
+        {% include "components/header.html" %}
+        <main id="main">
+            {% block body %}{% endblock %}
+        </main>
+        {% include "components/footer.html" %}
+    </body>
+</html>

@@ -1,0 +1,108 @@
+/*-- -------------------------- -->
+<---      Core Dark Styles      -->
+<--- -------------------------- -*/
+/* Mobile */
+@media only screen and (min-width: 0rem) {
+    :root {
+        --dark: #082032;
+        --medium: #2c394b;
+        --accent: #334756;
+        --bodyTextColorWhite: #fafbfc;
+    }
+    body.dark-mode {
+        background-color: var(--dark);
+    }
+    body.dark-mode p,
+    body.dark-mode li,
+    body.dark-mode h1,
+    body.dark-mode h2,
+    body.dark-mode h3,
+    body.dark-mode h4,
+    body.dark-mode h5,
+    body.dark-mode h6,
+    body.dark-mode .cs-title,
+    body.dark-mode .cs-text,
+    body.dark-mode .cs-li {
+        color: var(--bodyTextColorWhite);
+    }
+    body.dark-mode .light {
+        display: none;
+    }
+    body.dark-mode .dark {
+        display: block !important;
+    }
+    .dark {
+        /* class used to hide elements that only need to be seen when dark mode is enabled */
+        display: none;
+    }
+}
+/*-- -------------------------- -->
+  <---      Dark Mode Toggle      -->
+  <--- -------------------------- -*/
+/* Mobile - 360px */
+@media only screen and (min-width: 0rem) {
+    body.dark-mode #dark-mode-toggle .cs-sun {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+    body.dark-mode #dark-mode-toggle .cs-moon {
+        opacity: 0;
+        transform: translate(-50%, -150%);
+    }
+    #dark-mode-toggle {
+        width: 3rem;
+        height: 3rem;
+        padding: 0;
+        background: transparent;
+        border: none;
+        display: block;
+        order: 2;
+        position: relative;
+        z-index: 1000;
+        overflow: hidden;
+    }
+    #dark-mode-toggle img,
+    #dark-mode-toggle svg {
+        width: 1.25rem;
+        height: 1.25rem;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        pointer-events: none;
+    }
+    #dark-mode-toggle .cs-moon {
+        z-index: 2;
+        transition: transform 0.3s, opacity 0.3s;
+        fill: #1a1a1a;
+    }
+    #dark-mode-toggle .cs-sun {
+        opacity: 0;
+        z-index: 1;
+        transform: translate(-50%, 100%);
+        transition: transform 0.3s, opacity 0.3s;
+    }
+}
+/* Tablet - 768px */
+@media only screen and (min-width: 48rem) {
+    #dark-mode-toggle {
+        margin-left: 1rem;
+        order: 3;
+        position: relative;
+        right: auto;
+        bottom: auto;
+    }
+}
+/* Desktop - 1024px */
+@media only screen and (min-width: 64rem) {
+    #dark-mode-toggle {
+        margin: 0;
+        position: relative;
+        right: auto;
+        bottom: auto;
+        transform: none;
+    }
+    #dark-mode-toggle:hover {
+        cursor: pointer;
+    }
+}
