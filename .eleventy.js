@@ -1,6 +1,7 @@
 // Plugin Imports
 const pluginDirectoryOutput = require("@11ty/eleventy-plugin-directory-output");
 const pluginEleventyNavigation = require("@11ty/eleventy-navigation");
+const markdownIt = require('markdown-it')
 
 // Filter Imports
 const filterFormatDate = require("./src/config/filters/formatDate");
@@ -41,6 +42,14 @@ module.exports = function (eleventyConfig) {
 
     // Turns a date from ISO format to a more human-readable one
     eleventyConfig.addFilter("formatDate", filterFormatDate);
+
+    // Formats markdown content into Rich Text HTML
+    eleventyConfig.addFilter("md", (content) => markdownIt({
+        html: true,
+        breaks: true,
+        linkify: true,
+        xhtmlOut: true
+    }).render(content));
 
     return {
         dir: {
