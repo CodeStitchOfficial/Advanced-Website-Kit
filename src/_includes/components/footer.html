@@ -12,7 +12,7 @@
                 {% set navPages = collections.all | eleventyNavigation %}
                 {% for entry in navPages %}
                     <li class="cs-li">
-                        <a href="{{ entry.link }}" class="cs-link">{{ entry.key }}</a>
+                        <a href="{{ entry.url }}" class="cs-link">{{ entry.key }}</a>
                     </li>
                 {% endfor %}
             </ul>
